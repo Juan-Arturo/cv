@@ -1,0 +1,83 @@
+<main id="main">
+  <!-- ======= About Section ======= -->
+  <section id="about" class="about ">
+    <div class="container">
+      <a popover="Este es el contenido del popover">
+        <i class="bi bi-envelope-at-fill"></i>
+      </a>
+
+      <div class="section-title">
+        <h2 class="mayus">ACERCA DE MÍ</h2>
+        <p>Soy comprometido con mi trabajo, manteniendo mucha responsabilidad en todo lo
+           que hago. Constantemente busco aprender cosas nuevas, sin importar si tienen
+           relación o no, con mi formación profesional. Me considero una persona activa a
+            la que le gusta trabajar en equipo, con capacidad de liderazgo,
+            de ser necesario.</p>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4" data-aos="">
+          <img src="assets/img/yo.jpg" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+          <h3>INGENIERO EN TECNOLOGÍAS DE LA INFORMACIÓN</h3>
+
+          <div class="row">
+            <div class="col-lg-6">
+              <ul>
+                <li><i class="bi bi-chevron-right"></i> <strong>Fecha de nacimiento:</strong> <span>14 diciembre 1999</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Celular:</strong> <span>246 196 93 62</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Estado civil:</strong> <span>soltero</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Ciudad:</strong> <span>Tlaxcala, México.</span></li>
+
+              </ul>
+            </div>
+            <div class="col-lg-6">
+              <ul>
+                <li><i class="bi bi-chevron-right"></i> <strong>Edad:</strong> <span>24</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Nivel de estudios:</strong> <span>Licenciatura</span>
+                </li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Correo:</strong> <span>JuanArturoGP2024&#64;hotmail.com</span>
+                </li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Disponible</span></li>
+              </ul>
+            </div>
+          </div>
+          <p style="text-align: justify;">
+            En mi tiempo libre, disfruto explorando nuevas áreas de interés y sumergiéndome en proyectos creativos.
+             Creo firmemente en el equilibrio entre el trabajo y la vida personal, encuentro inspiración en la
+             búsqueda constante de la excelencia en todas las facetas de mi vida.
+          </p>
+        </div>
+      </div>
+
+      <!-- competencias-->
+
+      <div class="content m-4">
+        <h3>Competencias</h3>
+        <div class="row">
+          <div class="col-md-6">
+
+            <div class="card skill-card" *ngFor="let skill of skills.slice(0, skills.length / 2)">
+              <div class="card-body">
+                <i class="{{ skill.icon }}"></i>
+                <span>{{ skill.name }}</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+
+            <div class="card skill-card" *ngFor="let skill of skills.slice(skills.length / 2)">
+              <div class="card-body">
+                <i class="{{ skill.icon }}"></i>
+                <span>{{ skill.name }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </section><!-- End About Section -->
+</main>

@@ -1,1 +1,285 @@
 /* You can add global styles to this file, and also import other style files */
+/*bootstrap 5*/
+
+@import '@fortawesome/fontawesome-free/css/all.css'; /*iconos*/
+
+@import "primeng/resources/themes/lara-light-blue/theme.css"; /*biblioteca de componentes*/
+@import "primeng/resources/primeng.css"; /*biblioteca de componentes*/
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+
+/*estilos de la pokedex*/
+/* You can add global styles to this file, and also import other style files */
+/* COLOR */
+.bg-color-black {
+    background-color: #000000 !important;
+}
+.color-black {
+    color: #000000 !important;
+}
+.bg-color-white {
+    background-color: #ffffff !important;
+}
+.color-white {
+    color: #ffffff !important;
+}
+.bg-color-grass {
+    background-color: #3E9709 !important;
+}
+.color-grass {
+    color: #3E9709 !important;
+}
+.bg-color-grass-light {
+    background-color: #7EB95B !important;
+}
+.color-grass-light {
+    color: #7EB95B !important;
+}
+.bg-color-fire {
+    background-color: #FC0C0B !important;
+}
+.color-fire {
+    color: #FC0C0B !important;
+}
+.bg-color-fire-light {
+    background-color: #FD5D5C !important;
+}
+.color-fire-light {
+    color: #FD5D5C !important;
+}
+.bg-color-water {
+    background-color: #0A7ABC !important;
+}
+.color-water {
+    color: #0A7ABC !important;
+}
+.bg-color-water-light {
+    background-color: #5BA6D2 !important;
+}
+.color-water-light {
+    color: #5BA6D2 !important;
+}
+.bg-color-normal {
+    background-color: #CCC9AA !important;
+}
+.color-normal {
+    color: #CCC9AA !important;
+}
+.bg-color-normal-light {
+    background-color: #DDDBC6 !important;
+}
+.color-normal-light {
+    color: #DDDBC6 !important;
+}
+.bg-color-flying {
+    background-color: #5EB9B2 !important;
+}
+.color-flying {
+    color: #5EB9B2 !important;
+}
+.bg-color-flying-light {
+    background-color: #93D0CB !important;
+}
+.color-flying-light {
+    color: #93D0CB !important;
+}
+.bg-color-bug {
+    background-color: #91BA2E !important;
+}
+.color-bug {
+    color: #91BA2E !important;
+}
+.bg-color-bug-light {
+    background-color: #BDDD6E !important;
+}
+.color-bug-light {
+    color: #BDDD6E !important;
+}
+.bg-color-poison {
+    background-color: #A819D7 !important;
+}
+.color-poison {
+    color: #A819D7 !important;
+}
+.bg-color-poison-light {
+    background-color: #C565E4 !important;
+}
+.color-poison-light {
+    color: #C565E4 !important;
+}
+.bg-color-electric {
+    background-color: #FFFA24 !important;
+}
+.color-electric {
+    color: #FFFA24 !important;
+}
+.bg-color-electric-light {
+    background-color: #FFFB6D !important;
+}
+.color-electric-light {
+    color: #FFFB6D !important;
+}
+.bg-color-ground {
+    background-color: #E1D158 !important;
+}
+.color-ground {
+    color: #E1D158 !important;
+}
+.bg-color-ground-light {
+    background-color: #EDE293 !important;
+}
+.color-ground-light {
+    color: #EDE293 !important;
+}
+.bg-color-fighting {
+    background-color: #E81319 !important;
+}
+.color-fighting {
+    color: #E81319 !important;
+}
+.bg-color-fighting-light {
+    background-color: #EF6165 !important;
+}
+.color-fighting-light {
+    color: #EF6165 !important;
+}
+.bg-color-psychic {
+    background-color: #EC0E63 !important;
+}
+.color-psychic {
+    color: #EC0E63 !important;
+}
+.bg-color-psychic-light {
+    background-color: #F55792 !important;
+}
+.color-psychic-light {
+    color: #F55792 !important;
+}
+.bg-color-rock {
+    background-color: #776A3E !important;
+}
+.color-rock {
+    color: #776A3E !important;
+}
+.bg-color-rock-light {
+    background-color: #94834F !important;
+}
+.color-rock-light {
+    color: #94834F !important;
+}
+.bg-color-ice {
+    background-color: #1995A1 !important;
+}
+.color-ice {
+    color: #1995A1 !important;
+}
+.bg-color-ice-light {
+    background-color: #65B8C0 !important;
+}
+.color-ice-light {
+    color: #65B8C0 !important;
+}
+.bg-color-ghost {
+    background-color: #8E55A4 !important;
+}
+.color-ghost {
+    color: #8E55A4 !important;
+}
+.bg-color-ghost-light {
+    background-color: #B38DC2 !important;
+}
+.color-ghost-light {
+    color: #B38DC2 !important;
+}
+.bg-color-dragon {
+    background-color: #8A55FD !important;
+}
+.color-dragon {
+    color: #8A55FD !important;
+}
+.bg-color-dragon-light {
+    background-color: #B18DFD !important;
+}
+.color-dragon-light {
+    color: #B18DFD !important;
+}
+.bg-color-dark {
+    background-color: #5F4632 !important;
+}
+.color-dark {
+    color: #5F4632 !important;
+}
+.bg-color-dark-light {
+    background-color: #916852 !important;
+}
+.color-dark-light {
+    color: #916852 !important;
+}
+.bg-color-steel {
+    background-color: #7B8E8A !important;
+}
+.color-steel {
+    color: #7B8E8A !important;
+}
+.bg-color-steel-light {
+    background-color: #BBC5C4 !important;
+}
+.color-steel-light {
+    color: #BBC5C4 !important;
+}
+.bg-color-fairy {
+    background-color: #FFA0C2 !important;
+}
+.color-fairy {
+    color: #FFA0C2 !important;
+}
+.bg-color-fairy-light {
+    background-color: #FDD1E0 !important;
+}
+.color-fairy-light {
+    color: #FDD1E0 !important;
+}
+.bg-color-gray {
+    background-color: #b6b6b6 !important;
+}
+.color-gray {
+    color: #b6b6b6 !important;
+}
+.bg-color-gray-light {
+    background-color: #d8d8d8 !important;
+}
+.color-gray-light {
+    color: #d8d8d8 !important;
+}
+.bg-color-gray-dark {
+    background-color: #606060 !important;
+}
+.color-gray-dark {
+    color: #606060 !important;
+}
+.bg-color-transparent {
+    background-color: transparent !important;
+}
+.color-transparent {
+    color: transparent !important;
+}
+/*
+@for $i from 0 through 100 {
+    .w-#{$i} {
+        width: #{$i * 1%};
+    }
+    .h-#{$i} {
+        height: #{$i * 1%};
+    }
+} */
+
+/*end estilos de la pokedex*/
+
+
+.mayus{
+    text-transform: uppercase;
+}

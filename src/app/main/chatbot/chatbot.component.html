@@ -1,0 +1,41 @@
+<main id="main">
+
+  <div class="chat-container">
+    <div class="chat-header">
+      Gemini ChatBot
+    </div>
+
+    <div class="chat-messages">
+      <div *ngFor="let message of chatHistory">
+        <div class="message" [ngClass]="{'usermessage': message.from === 'user','botmessage' : message.from === 'bot'}">
+          <i class="m-2 bi"
+            [ngClass]="{'bi-person-circle': message.from === 'user','bi-robot' : message.from === 'bot'}"></i>
+          <span class="responses" [innerHTML]="formatText(message.message)">  </span>
+          <!-- <span> {{message.message}} </span> -->
+        </div>
+      </div>
+
+      <!-- animacion -->
+      <div *ngIf="loading" class="chat-messages pulse">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
+
+    </div>
+
+
+
+
+    <div class="chat-input">
+      <input type="text" class="input-field" id="message-input" (keyup.enter)="sendData()" [disabled]="loading" placeholder="Escribe un mensaje..."
+        [(ngModel)]="prompt">
+      <button class="send-button" id="send-button" (click)="sendData()" [disabled]="loading">Enviar</button>
+    </div>
+    
+  </div>
+
+
+
+
+</main>

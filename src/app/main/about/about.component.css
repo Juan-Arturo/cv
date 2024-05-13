@@ -1,0 +1,42 @@
+/* styles.css o cualquier otro archivo de estilos */
+/* styles.css o cualquier otro archivo de estilos */
+
+.skill-card {
+  margin-bottom: 20px;
+}
+
+.skill-card .card-body {
+  display: flex;
+  align-items: center;
+}
+
+.skill-card .card-body i {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.skill-card .card-body span {
+  font-size: 18px;
+}
+
+
+/* styles.css o cualquier otro archivo de estilos */
+
+.skill-card {
+    margin-bottom: 20px;
+  }
+  
+  .skill-card .card-body {
+    display: flex;
+    align-items: center;
+  }
+  
+  .skill-card .card-body i {
+    font-size: 24px;
+    margin-right: 10px;
+  }
+  
+  .skill-card .card-body span {
+    font-size: 18px;
+  }
+  
