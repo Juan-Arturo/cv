@@ -31,32 +31,32 @@ export class PokeapiService {
 
   constructor(private http: HttpClient) { }
 
-  getPokemonByName(Pokename: string): Observable<any> {
-    return this.http.get(`https://pokeapi.co/api/v2/pokemon/${Pokename}`);
-  }
+//   getPokemonByName(Pokename: string): Observable<any> {
+//     return this.http.get(`https://pokeapi.co/api/v2/pokemon/${Pokename}`);
+//   }
 
 
-  getPokemonTypes(pokemonName: string): Observable<any> {
-    return this.http.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
-      .pipe(
-        map((data: any) => {
-          return data.types.map((type: any) => this.tipoTraduccion[type.type.name]);
-        })
-      );
-  }
+//   getPokemonTypes(pokemonName: string): Observable<any> {
+//     return this.http.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
+//       .pipe(
+//         map((data: any) => {
+//           return data.types.map((type: any) => this.tipoTraduccion[type.type.name]);
+//         })
+//       );
+//   }
 
 
-  getPokemonDescription(pokemonId: number): Observable<any> {
-    return this.http.get(`https://pokeapi.co/api/v2/pokemon-species/${pokemonId}`)
-      .pipe(
-        map((data: any) => {
-          // La descripción a menudo se encuentra en data.flavor_text_entries
-          // Puedes filtrar el array para obtener la descripción en inglés u otro idioma si lo prefieres
-          return data.flavor_text_entries.find((entry: any) => entry.language.name === 'es').flavor_text;
-        })
-      );
-  }
-}
+//   getPokemonDescription(pokemonId: number): Observable<any> {
+//     return this.http.get(`https://pokeapi.co/api/v2/pokemon-species/${pokemonId}`)
+//       .pipe(
+//         map((data: any) => {
+//           // La descripción a menudo se encuentra en data.flavor_text_entries
+//           // Puedes filtrar el array para obtener la descripción en inglés u otro idioma si lo prefieres
+//           return data.flavor_text_entries.find((entry: any) => entry.language.name === 'es').flavor_text;
+//         })
+//       );
+//   }
+// }
 
 
 
@@ -76,7 +76,7 @@ export class PokeapiService {
 // export class PokemonService {
 
 //     private baseUrl = 'https://pokeapi.co/api/v2/';
-    
+
 //     constructor(private http: HttpClient) { }
 
 
@@ -104,6 +104,5 @@ export class PokeapiService {
 
 
 
-    
-    
-// }
+
+}

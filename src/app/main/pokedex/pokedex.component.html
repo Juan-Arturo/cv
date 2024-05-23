@@ -69,12 +69,6 @@
       <div class="container ">
         <div class="row  ">
           <div class="col-12  d-flex justify-content-center mt-1 mb-1">
-            <!-- <select class="form-select me-2" [(ngModel)]="pageSize" (change)="pageSizeChanged()" >
-              <option value="6">6</option>
-              <option value="12">12</option>
-              <option value="18">18</option>
-              <option value="24">24</option>
-            </select> -->
             <button class="btn btn-danger me-2 col-4" id="btnPrevious" (click)="previousPage()">Atrás</button>
             <button class="btn btn-danger p-1 col-4" id="btnNext" (click)="nextPage()">Siguiente</button>
           </div>
@@ -107,9 +101,13 @@
               </div>
 
             </div>
+
           </div>
+
         </div>
       </div>
+      <button class="btn btn-danger p-1 col-4" id="btnNext" (click)="resetSearch()">Volver a la lista</button>
+
     </div>
 
 

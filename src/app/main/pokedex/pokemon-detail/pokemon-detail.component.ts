@@ -19,20 +19,20 @@ import { PokemonService } from '../../../services/pokemon.service';
 })
 export class PokemonDetailComponent implements OnInit  {
 
-   
+
   pokemon: PokemonDetail;
   classicMode: boolean;
   description: string;
 
-  constructor(@Inject(MAT_BOTTOM_SHEET_DATA) public data: any,private pokemonService: PokemonService) { 
+  constructor(@Inject(MAT_BOTTOM_SHEET_DATA) public data: any,private pokemonService: PokemonService) {
     this.pokemon = data.pokemon;
     this.classicMode = data.classicMode;
-    
+
   }
 
   ngOnInit(): void {
 
-    
+
   this.getDescriotion()
   }
 
@@ -49,9 +49,9 @@ export class PokemonDetailComponent implements OnInit  {
   getDescriotion() {
     this.pokemonService.getPokemonDescription(this.pokemon.id)
       .subscribe((description: string) => {
-        this.description = description; 
+        this.description = description;
       });
   }
 }
-    
- 
+
+

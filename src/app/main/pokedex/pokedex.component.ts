@@ -13,7 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../../material.module';
 import { RouterLink } from '@angular/router';
 import Swal from 'sweetalert2';
-
+import { catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-pokedex',
@@ -25,7 +25,7 @@ import Swal from 'sweetalert2';
   styleUrl: './pokedex.component.css'
 })
 export class PokedexComponent implements OnInit {
-  
+
   search: FormControl = new FormControl('');
   pokemons: PokemonDetail[] = [];
   classicMode: boolean = false;
@@ -36,29 +36,29 @@ export class PokedexComponent implements OnInit {
   isSearching = false;
 
 
-  
+
   pageIndex:number=0;
   pageSize:number=0;
   limit:number=50;
-  
+
 
 
 
   constructor(private pokemonService: PokemonService,
               private bottomSheet: MatBottomSheet,
-              private snackBar: MatSnackBar) { 
-              
+              private snackBar: MatSnackBar) {
+
               }
 
    ngOnInit(): void {
-    this.welconeMessage();
+
+    this.welcomeMessage();
+
     this.pageIndex = 0;
     this.pageSize =6;
     this.getPokelist(this.pageIndex, this.pageSize);
-  
+
   }
-
-
   onSearchPokemon(): void {
     const lowercaseValue = this.search.value.toLowerCase(); // Convert to lowercase
     if (lowercaseValue === '') {
@@ -70,27 +70,21 @@ export class PokedexComponent implements OnInit {
         .subscribe((pokemon: PokemonDetail) => {
           this.searchPokemon = pokemon;
           this.isLoading = false;
-        }, (error: any) => {
-          this.isLoading = false;
-          if (error.status === 404) {
-            this.snackBar.open('Losiento, Pokemon no encontrado', 'continuar', {
-              duration: 5000,
-            });
-          }
         });
     }
   }
 
-  getPokelist(pageIndex: number, pageSize: number) {    
+
+  getPokelist(pageIndex: number, pageSize: number) {
       this.pokemonService.getPokemonList(pageIndex * pageSize,this.limit)
         .subscribe((list: PokemonList[]) => {
           this.getPokemon(list);
       });
-    
+
   }
 
 
- 
+
   private getPokemon(list: PokemonList[]) {
     const arr: Observable<PokemonDetail>[] = [];
     list.map((value: PokemonList) => {
@@ -98,7 +92,7 @@ export class PokedexComponent implements OnInit {
         this.pokemonService.getPokemonDetail(value.name)
       );
     });
-  
+
     forkJoin([...arr]).subscribe((pokemons: PokemonDetail[]) => {
       pokemons.forEach((pokemon) => {
         if (!this.pokemons.find((p) => p.id === pokemon.id)) {
@@ -108,8 +102,8 @@ export class PokedexComponent implements OnInit {
       this.offset += list.length; // Actualiza el valor de offset para apuntar al siguiente conjunto de Pokémon
       this.isLoading = false;
     });
-  
-  
+
+
 }
 
 
@@ -130,19 +124,28 @@ export class PokedexComponent implements OnInit {
       this.getPokelist(this.pageIndex, this.pageSize);
     }
   }
-  
+
   nextPage() {
     if ((this.pageIndex + 1) * this.pageSize < this.pokemons.length) {
       this.pageIndex++;
       this.getPokelist(this.pageIndex, this.pageSize);
     }
   }
-  
 
-  welconeMessage(){
-      Swal.fire("Sección demostrativa de mis conocimientos en servicios API RESTful");
-    } 
-  
+  resetSearch(): void {
+    this.isSearching = false;
+    this.searchPokemon = new PokemonDetail(); // Limpiar el objeto de búsqueda
+  }
+
+
+
+
+   // Método para mostrar la alerta de bienvenida
+   welcomeMessage(): void {
+    Swal.fire("Sección demostrativa de mis conocimientos en servicios API RESTful");
+  }
+
+}
 
      // onScroll(event: Event): void {
   //   const element: HTMLDivElement = event.target as HTMLDivElement;
@@ -151,7 +154,7 @@ export class PokedexComponent implements OnInit {
   //   }
   // }
 
-  }
-  
+
+
 
 
