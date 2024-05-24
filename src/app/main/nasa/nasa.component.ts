@@ -5,12 +5,12 @@ import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '../../material.module';
 import {EpicData} from '../../interfaces/nasa/epicData.interface'
 import { EpicTransformedData } from '../../interfaces/nasa/epicTransformedData .intyerface';
-import { response } from 'express';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 @Component({
   selector: 'app-nasa',
   standalone: true,
-  imports: [CommonModule,FormsModule,MaterialModule],
+  imports: [CommonModule,FormsModule,MaterialModule,LazyLoadImageModule],
   templateUrl: './nasa.component.html',
   styleUrl: './nasa.component.css'
 })

@@ -1,19 +1,19 @@
 
 <main id="main">
-  <p>YO SOY LA NASA</p>
-
 
   <div class="card-container">
-    <div *ngFor="let item of epicData" class="card">
-      <div class="card-image">
-        <img [src]="item.imageUrl" class="card-img-top" alt="Imagen EPIC">
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">{{ item.identifier }}</h5>
-        <p class="card-text">{{ item.caption }}</p>
-        <p class="card-text"><small class="text-muted">Date: {{ item.date }}</small></p>
-      </div>
-    </div>
+    <mat-card *ngFor="let item of epicData" class="card">
+      <img
+        mat-card-image
+        [defaultImage]="'/assets/placeholder.png'"
+        [lazyLoad]="item.imageUrl"
+        alt="Imagen EPIC">
+      <mat-card-content>
+        <h2>{{ item.identifier }}</h2>
+        <p>{{ item.caption }}</p>
+        <p><small>Date: {{ item.date | date }}</small></p>
+      </mat-card-content>
+    </mat-card>
   </div>
 
 
