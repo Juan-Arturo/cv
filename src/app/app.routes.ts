@@ -9,6 +9,7 @@ import { PokedexComponent } from './main/pokedex/pokedex.component';
 import { ContactComponent } from './main/contact/contact.component';
 import { SkillsComponent } from './main/skills/skills.component';
 import { ChatbotComponent } from './main/chatbot/chatbot.component';
+import { NasaComponent } from './main/nasa/nasa.component';
 
 
 export const routes: Routes = [
@@ -19,8 +20,9 @@ export const routes: Routes = [
     {path: "pokedex", component:PokedexComponent},
     {path: "skills", component: SkillsComponent},
     {path: "contact", component: ContactComponent},
-    {path: "chatbot", component: ChatbotComponent}
-   
-   
+    {path: "chatbot", component: ChatbotComponent},
+    {path: "nasa", component: NasaComponent}
+
+
 
 ];
