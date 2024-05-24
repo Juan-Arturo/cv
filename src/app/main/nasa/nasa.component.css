@@ -1,19 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
 .card-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  background-color: #c2bfbf; /* Fondo negro para darle un look espacial */
 }
 
 .card {
   width: 300px;
   margin: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: 1px solid #444; /* Borde más oscuro */
+  border-radius: 10px; /* Bordes redondeados */
   overflow: hidden;
+  background-color: #1c1c1c; /* Fondo de la tarjeta oscuro */
+  color: #fff; /* Texto blanco */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Sombra para un efecto elevado */
+  transition: transform 0.2s; /* Suavizado en la transformación */
 }
 
-.card-image {
+.card:hover {
+  transform: scale(1.05); /* Efecto de agrandado al pasar el ratón */
+}
+
+mat-card-image {
   height: 200px;
-  overflow: hidden;
+  background-color: #000; /* Fondo negro para imágenes */
 }
 
 .card-img-top {
@@ -21,15 +34,100 @@
   height: auto;
 }
 
-.card-body {
+mat-card-content {
   padding: 15px;
 }
 
-.card-title {
-  font-size: 18px;
+h2 {
+  font-size: 20px;
   margin-bottom: 10px;
+  color: #00aaff; /* Color azul NASA */
+  border-bottom: 1px solid #00aaff; /* Línea debajo del título */
+  padding-bottom: 5px;
+  text-align: center;
 }
 
-.card-text {
-  font-size: 14px;
+.coordinates-title {
+  font-size: 16px;
+  margin: 10px 0 5px;
+  color: #ffcc00; /* Color dorado */
+  text-align: start;
 }
+
+.coordinates {
+  font-size: 14px;
+  font-family: 'Courier New', Courier, monospace; /* Fuente monoespaciada para coordenadas */
+}
+
+.date {
+  font-size: 12px;
+  color: #888; /* Color gris para la fecha */
+  margin-top: 10px;
+}
+
+.date small {
+  color: #ccc; /* Color más claro para el texto pequeño */
+}
+
+
+
+/*barra de navegacion*/
+/*040b14*/
+.galaxy-navbar {
+  background: linear-gradient(135deg, #071221, #0e3465);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  font-family: 'Orbitron', sans-serif;
+}
+
+.galaxy-logo {
+  height: 60px;
+  margin-right: 10px;
+}
+
+.galaxy-navbar .navbar-brand,
+.galaxy-navbar .nav-link {
+  color: #fff !important;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+}
+
+.galaxy-navbar .nav-link:hover {
+  color: #ffcc00 !important;
+  text-shadow: 0 0 10px rgba(255, 204, 0, 1);
+}
+
+.galaxy-navbar .navbar-toggler-icon {
+  background-image: url('data:image/svg+xml;charset=UTF8,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="rgba%28255, 255, 255, 1%29" stroke-width="2" linecap="round" linejoin="round" d="M4 7h22M4 15h22M4 23h22"%2F%3E%3C/svg%3E');
+}
+
+.galaxy-navbar .form-control {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+.galaxy-navbar .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.galaxy-navbar .form-control:focus {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+}
+
+.galaxy-navbar .btn-outline-light {
+  border-color: #fff;
+  color: #fff;
+}
+
+.galaxy-navbar .btn-outline-light:hover {
+  background: #ffcc00;
+  border-color: #ffcc00;
+  color: #000;
+}
+
+.galaxy-navbar .galaxy-btn {
+  transition: background 0.3s, border-color 0.3s, color 0.3s;
+}
+

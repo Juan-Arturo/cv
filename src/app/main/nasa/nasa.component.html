@@ -1,7 +1,42 @@
 
 <main id="main">
 
-  <div class="card-container">
+
+  <nav class="galaxy-navbar navbar navbar-expand-lg d-flex justify-content-end">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/nasa">
+        <img src="/assets/img/nasa/icons8-nasa-480.png" class="galaxy-logo" alt="NASA Logo">
+        EXPLOREMOS EL UNIVERSO JUNTOS.
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="galaxy-navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Missions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">News</a>
+          </li>
+
+        </ul>
+        <!-- <form class="d-flex m-1">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-light galaxy-btn" type="submit">Search</button>
+        </form> -->
+      </div>
+    </div>
+  </nav>
+
+
+
+
+  <!-- <div class="card-container">
     <mat-card *ngFor="let item of epicData" class="card">
       <img
         mat-card-image
@@ -10,11 +45,14 @@
         alt="Imagen EPIC">
       <mat-card-content>
         <h2>{{ item.identifier }}</h2>
-        <p>{{ item.caption }}</p>
-        <p><small>Date: {{ item.date | date }}</small></p>
+        <p class="coordinates-title">Coordenadas Centrales</p>
+        <p class="coordinates">{{ convertToDMS(item.centroid_coordinates.lat, true) }}, {{ convertToDMS(item.centroid_coordinates.lon, false) }}</p>
+        <p class="date"><small>Fecha: {{ item.date | date }}</small></p>
       </mat-card-content>
     </mat-card>
-  </div>
+  </div> -->
+
+
 
 
 
