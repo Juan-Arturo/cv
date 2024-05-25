@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NasaService } from '../../../services/nasa.service';
 import { response } from 'express';
-import { TechTransferResult } from '../../../interfaces/nasa/TechTransfer';
+import { TechTransfer, TechTransferResponse, TechTransferResult } from '../../../interfaces/nasa/TechTransfer';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '../../../material.module';
@@ -17,8 +17,7 @@ import { StripHtmlTagsPipe } from '../../../pipes/strip-html-tags.pipe';
   styleUrl: './tech-transfer.component.css'
 })
 export class TechTransferComponent implements OnInit {
-  techTransferData: TechTransferResult[] =[];
-
+  techTransferData: any = {}; // Inicializar como un objeto vacío
 
   constructor(private nasaService: NasaService){
 
@@ -30,10 +29,16 @@ export class TechTransferComponent implements OnInit {
 
   getTechTransfer(): void {
     this.nasaService.getTechTransfer().subscribe(response => {
-      this.techTransferData = response;
+      this.techTransferData = {
+        results: response.results,
+        perPage: response.perPage,
+        page: response.page
+      };
     });
   }
 
 
-
 }
+
+
+

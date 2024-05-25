@@ -20,4 +20,8 @@ export interface TechTransferResult {
 }
 
 
-
+export interface TechTransferResponse {
+  results: TechTransferResult[];
+  perPage: number;
+  page: number;
+}

@@ -54,21 +54,30 @@ export class NasaService {
   }
 
 
-  // Nuevo método para obtener datos de TechTransfer
-  getTechTransfer(): Observable<TechTransferResult[]> {
-    return this.http.get<TechTransfer>(`${this.nasaUrl}techtransfer/patent/?engine&api_key=${this.apiKey}`).pipe(
-      map((data: TechTransfer) => {
-        // Manipulación de datos
-        return data.results.map(result => ({
-          id: result[0], // Ajusta según el índice correcto de tus datos
-          name: result[1],
-          title: result[2],
-          description: result[3],
-          category: result[5],
-          imageUrl: result[10] // Ajusta según el índice correcto para la URL de la imagen
-        }));
-      })
-    );
+
+  getTechTransfer(): Observable<{ results: TechTransferResult[], perPage: number, page: number }> {
+    return this.http.get<TechTransfer>(`${this.nasaUrl}techtransfer/patent/?engine&api_key=${this.apiKey}`)
+      .pipe(
+        map((data: TechTransfer) => {
+          const results = data.results.map(result => ({
+            id: result[0],
+            name: result[1],
+            title: result[2],
+            description: result[3],
+            category: result[5],
+            imageUrl: result[10] // Asegúrate de que el índice sea el correcto según tus datos
+          }));
+
+          return {
+            results,
+
+            perPage: data.perPage,
+            page: data.page
+          };
+        })
+      );
   }
+
+
 
 }
