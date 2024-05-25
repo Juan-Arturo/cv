@@ -10,6 +10,8 @@ import { ContactComponent } from './main/contact/contact.component';
 import { SkillsComponent } from './main/skills/skills.component';
 import { ChatbotComponent } from './main/chatbot/chatbot.component';
 import { NasaComponent } from './main/nasa/nasa.component';
+import { EpicComponent } from './main/nasa/epic/epic.component';
+import { TechTransferComponent } from './main/nasa/tech-transfer/tech-transfer.component';
 
 
 export const routes: Routes = [
@@ -21,7 +23,14 @@ export const routes: Routes = [
     {path: "skills", component: SkillsComponent},
     {path: "contact", component: ContactComponent},
     {path: "chatbot", component: ChatbotComponent},
-    {path: "nasa", component: NasaComponent}
+
+    {path: "nasa", component: NasaComponent,
+     children:[
+      {path: "", component: EpicComponent},
+      {path: "epic", component: EpicComponent},
+      {path: "TechTransfer", component: TechTransferComponent}
+     ]
+    }
 
 
 
