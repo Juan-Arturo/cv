@@ -1,0 +1,73 @@
+.card {
+  transition: transform 0.3s, box-shadow 0.3s;
+  min-height: 200px; /* Ajusta esto según la altura mínima que desees para las tarjetas */
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(to right, #fff, #f8f9fa);
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-left {
+  width: 200px;
+  height: auto;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.card-img-left:hover {
+  transform: scale(1.05);
+  filter: brightness(0.9);
+}
+
+.card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #fff;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.card-title {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.card-text {
+  color: #555;
+  text-align: justify;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.text-muted {
+  color: #aaa;
+}
+
+.flex-row {
+  display: flex;
+  align-items: stretch; /* Asegura que la imagen y el contenido tengan la misma altura */
+}
+
+.flex-row-reverse {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: stretch; /* Asegura que la imagen y el contenido tengan la misma altura */
+}
+
+@media (max-width: 992px) {
+  .card-img-left {
+    width: 150px;
+  }
+}

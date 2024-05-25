@@ -1,10 +1,14 @@
-<div *ngFor="let item of techTransferData">
-  <h2>{{ item.title | stripHtmlTags }}</h2>
-  <p>ID: {{ item.id }}</p>
-  <p>Name: {{ item.name }}</p>
-  <p>Description: {{ item.description | stripHtmlTags }}</p>
-  <p>Category: {{ item.category }}</p>
-  <img [lazyLoad]="item.imageUrl" alt="{{ item.title | stripHtmlTags  }}">
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-lg-12 mb-4" *ngFor="let item of techTransferData; let i = index">
+      <div [ngClass]="{'flex-row': i % 2 === 0, 'flex-row-reverse': i % 2 !== 0}" class="card">
+        <img class="card-img-left" [src]="item.imageUrl" alt="{{ item.title | stripHtmlTags }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ item.title | stripHtmlTags }}</h5>
+          <p class="card-text">{{ item.description | stripHtmlTags }}</p>
+          <small class="text-muted">Category: {{ item.category }}</small>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-
