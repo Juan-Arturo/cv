@@ -6,11 +6,13 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '../../../material.module';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { StripHtmlTagsPipe } from '../../../pipes/strip-html-tags.pipe';
 
 @Component({
   selector: 'app-tech-transfer',
   standalone: true,
-  imports: [CommonModule,FormsModule,MaterialModule,LazyLoadImageModule],
+  imports: [CommonModule,FormsModule,
+    MaterialModule,LazyLoadImageModule,StripHtmlTagsPipe ],
   templateUrl: './tech-transfer.component.html',
   styleUrl: './tech-transfer.component.css'
 })
@@ -31,4 +33,7 @@ export class TechTransferComponent implements OnInit {
       this.techTransferData = response;
     });
   }
+
+
+
 }
