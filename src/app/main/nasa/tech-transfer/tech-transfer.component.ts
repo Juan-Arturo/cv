@@ -47,6 +47,7 @@ export class TechTransferComponent implements OnInit {
     if (this.currentPage < this.totalPages - 1) {
       this.currentPage++;
       this.updatePagedResults();
+      this.scrollToTop();
     }
   }
 
@@ -54,19 +55,23 @@ export class TechTransferComponent implements OnInit {
     if (this.currentPage > 0) {
       this.currentPage--;
       this.updatePagedResults();
+      this.scrollToTop();
     }
   }
+
+
+  goToPage(page: number): void {
+    this.currentPage = page;
+    this.updatePagedResults();
+    this.scrollToTop();
+  }
+
 
   get totalPages(): number {
     return Math.ceil(this.totalResults / this.perPage);
   }
 
 
-
-  goToPage(page: number): void {
-    this.currentPage = page;
-    this.updatePagedResults();
-  }
 
 
   get visiblePages(): number[] {
@@ -88,6 +93,10 @@ export class TechTransferComponent implements OnInit {
     return Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i);
   }
 
+
+  scrollToTop(): void {
+    window.scroll({ top: 0, behavior: 'smooth' });  // Smooth scrolling
+  }
 
 }
 
