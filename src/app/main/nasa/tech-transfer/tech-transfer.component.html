@@ -1,6 +1,6 @@
 <div class="container mt-4">
   <div class="row">
-    <div class="col-lg-12 mb-4" *ngFor="let item of techTransferData.results; let i = index">
+    <div class="col-lg-12 mb-4" *ngFor="let item of pagedResults; let i = index">
       <div [ngClass]="{'flex-row': i % 2 === 0, 'flex-row-reverse': i % 2 !== 0}" class="card">
         <img class="card-img-left" [src]="item.imageUrl" alt="{{ item.title | stripHtmlTags }}">
         <div class="card-body">
@@ -12,3 +12,27 @@
     </div>
   </div>
 </div>
+
+<nav aria-label="Page navigation example" class="d-flex justify-content-center">
+  <ul class="pagination pagination-lg">
+    <!-- Botón de retroceder -->
+    <li class="page-item" [class.disabled]="currentPage === 0">
+      <a class="page-link" (click)="goToPreviousPage()" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <!-- Páginas numeradas (solo visible en pantalla grande) -->
+    <ng-container *ngFor="let page of visiblePages">
+      <li class="page-item d-none d-md-block" [class.active]="page === currentPage">
+        <a class="page-link" (click)="goToPage(page)">{{ page + 1 }}</a>
+      </li>
+    </ng-container>
+    <!-- Botón de avanzar -->
+    <li class="page-item" [class.disabled]="currentPage === totalPages - 1">
+      <a class="page-link" (click)="goToNextPage()" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+

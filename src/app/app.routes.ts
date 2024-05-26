@@ -12,6 +12,7 @@ import { ChatbotComponent } from './main/chatbot/chatbot.component';
 import { NasaComponent } from './main/nasa/nasa.component';
 import { EpicComponent } from './main/nasa/epic/epic.component';
 import { TechTransferComponent } from './main/nasa/tech-transfer/tech-transfer.component';
+import { PaginationComponent } from 'ng-bootstrap';
 
 
 export const routes: Routes = [
@@ -24,9 +25,10 @@ export const routes: Routes = [
     {path: "contact", component: ContactComponent},
     {path: "chatbot", component: ChatbotComponent},
 
+
     {path: "nasa", component: NasaComponent,
      children:[
-      {path: "", component: EpicComponent},
+      {path: "", component: TechTransferComponent},
       {path: "epic", component: EpicComponent},
       {path: "TechTransfer", component: TechTransferComponent}
      ]

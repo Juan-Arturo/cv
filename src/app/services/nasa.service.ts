@@ -55,7 +55,7 @@ export class NasaService {
 
 
 
-  getTechTransfer(): Observable<{ results: TechTransferResult[], perPage: number, page: number }> {
+  getTechTransfer(): Observable<{ results: TechTransferResult[],total: number, perPage: number, page: number }> {
     return this.http.get<TechTransfer>(`${this.nasaUrl}techtransfer/patent/?engine&api_key=${this.apiKey}`)
       .pipe(
         map((data: TechTransfer) => {
@@ -65,12 +65,11 @@ export class NasaService {
             title: result[2],
             description: result[3],
             category: result[5],
-            imageUrl: result[10] // Asegúrate de que el índice sea el correcto según tus datos
+            imageUrl: result[10] // direccion url imagen
           }));
-
           return {
             results,
-
+            total: data.total,
             perPage: data.perPage,
             page: data.page
           };

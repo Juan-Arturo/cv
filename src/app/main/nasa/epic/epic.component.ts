@@ -6,11 +6,13 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { EpicTransformedData } from '../../../interfaces/nasa/epicTransformedData .intyerface';
 import { NasaService } from '../../../services/nasa.service';
 import { EpicData } from '../../../interfaces/nasa/epicData.interface';
+import { PaginatorComponent } from '../../../shared/paginator/paginator.component';
 
 @Component({
   selector: 'app-epic',
   standalone: true,
-  imports: [CommonModule,FormsModule,MaterialModule,LazyLoadImageModule],
+  imports: [CommonModule,FormsModule,MaterialModule,
+    LazyLoadImageModule,PaginatorComponent],
   templateUrl: './epic.component.html',
   styleUrl: './epic.component.css'
 })

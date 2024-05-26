@@ -22,6 +22,7 @@ export interface TechTransferResult {
 
 export interface TechTransferResponse {
   results: TechTransferResult[];
+  total: number;
   perPage: number;
   page: number;
 }
