@@ -13,6 +13,7 @@ import { NasaComponent } from './main/nasa/nasa.component';
 import { EpicComponent } from './main/nasa/epic/epic.component';
 import { TechTransferComponent } from './main/nasa/tech-transfer/tech-transfer.component';
 import { PaginationComponent } from 'ng-bootstrap';
+import { ApodComponent } from './main/nasa/apod/apod.component';
 
 
 export const routes: Routes = [
@@ -28,9 +29,10 @@ export const routes: Routes = [
 
     {path: "nasa", component: NasaComponent,
      children:[
-      {path: "", component: TechTransferComponent},
-      {path: "epic", component: EpicComponent},
-      {path: "TechTransfer", component: TechTransferComponent}
+      {path: "", component: ApodComponent},
+      {path: "Epic", component: EpicComponent},
+      {path: "TechTransfer", component: TechTransferComponent},
+      {path: "APOD", component: ApodComponent}
      ]
     }
 

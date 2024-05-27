@@ -47,6 +47,8 @@ export class EpicComponent implements OnInit  {
   }
 
 
+
+  /*convertir a formato de cordenadas */
   convertToDMS(coordinate: number, isLat: boolean): string {
     const absolute = Math.abs(coordinate);
     const degrees = Math.floor(absolute);

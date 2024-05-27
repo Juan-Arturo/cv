@@ -5,14 +5,15 @@ import { EpicData } from '../interfaces/nasa/epicData.interface';
 import { response } from 'express';
 import { TechTransfer, TechTransferResult } from '../interfaces/nasa/TechTransfer';
 import { title } from 'process';
+import { Apod } from '../interfaces/nasa/Apod.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NasaService {
 
-    private apiKey = "WZtjU4dEOnmbXTgqFwJgNfEycXOGkAGQe2EQmn6H"
-    private nasaUrl = "https://api.nasa.gov/"
+  private apiKey = "WZtjU4dEOnmbXTgqFwJgNfEycXOGkAGQe2EQmn6H"
+  private nasaUrl = "https://api.nasa.gov/"
 
 
 
@@ -55,7 +56,7 @@ export class NasaService {
 
 
 
-  getTechTransfer(): Observable<{ results: TechTransferResult[],total: number, perPage: number, page: number }> {
+  getTechTransfer(): Observable<{ results: TechTransferResult[], total: number, perPage: number, page: number }> {
     return this.http.get<TechTransfer>(`${this.nasaUrl}techtransfer/patent/?engine&api_key=${this.apiKey}`)
       .pipe(
         map((data: TechTransfer) => {
@@ -77,6 +78,20 @@ export class NasaService {
       );
   }
 
+
+  getApod(): Observable<Apod> {
+    return this.http.get(`${this.nasaUrl}planetary/apod?api_key=${this.apiKey}`).pipe(
+      map((response: any) => ({
+        copyright: response.copyright,
+        date: new Date(response.date), // Aquí se debe convertir la fecha a un objeto Date
+        explanation: response.explanation,
+        hdurl: response.hdurl,
+        media_type: response.media_type, 
+        service_version: response.service_version,
+        title: response.title,
+      }))
+    );
+  }
 
 
 }

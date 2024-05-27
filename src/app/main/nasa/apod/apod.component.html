@@ -1,0 +1,10 @@
+<mat-card *ngIf="apodData">
+  <img mat-card-image [lazyLoad]="apodData.hdurl" [alt]="apodData.title">
+  <mat-card-content>
+    <h2>{{ apodData.title }}</h2>
+    <p>{{ apodData.explanation }}</p>
+    <p>Autor: {{ apodData.copyright }}</p>
+    <p>Fecha: {{ apodData.date | date:'mediumDate' }}</p>
+  </mat-card-content>
+</mat-card>
+
