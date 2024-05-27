@@ -1,3 +1,5 @@
+
+
 .card {
   transition: transform 0.3s, box-shadow 0.3s;
   min-height: 200px; /* Ajusta esto según la altura mínima que desees para las tarjetas */
@@ -42,6 +44,8 @@
   margin-bottom: 0.5rem;
   font-weight: bold;
   color: #333;
+  line-height: 1.1;
+
 }
 
 .card-text {
