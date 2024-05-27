@@ -17,11 +17,20 @@ import { PaginatorComponent } from '../../../shared/paginator/paginator.componen
   styleUrl: './tech-transfer.component.css'
 })
 export class TechTransferComponent implements OnInit {
-  techTransferData: any = {}; //inicializo un objeto
+
+
+  /*inicializo un objeto que ocupamos
+  para  guardar informacion de nuestro
+  servicio*/
+  techTransferData: any = {};
+
+
+  /*atributos para la paginacion */
   currentPage: number = 0;
-  perPage: number = 5;
-  totalResults: number = 0;
+  perPage: number = 5; //numero de elementos que veo por pagina
+  totalResults: number = 0; //areglo donde se guardan results
   pagedResults: any[] = [];
+
 
   constructor(private nasaService: NasaService) {}
 
@@ -29,13 +38,28 @@ export class TechTransferComponent implements OnInit {
     this.getTechTransfer();
   }
 
+
+  /*obtengo mis datos desde el servicio de la api */
   getTechTransfer(): void {
     this.nasaService.getTechTransfer().subscribe(response => {
       this.techTransferData = response;
       this.totalResults = response.total;
       this.updatePagedResults();
+
+      
     });
   }
+
+
+  /*metodos para la paginacion */
+
+
+  onPageChange(page: number): void {
+    this.currentPage = page;
+    this.updatePagedResults();
+    this.scrollToTop();
+  }
+
 
   updatePagedResults(): void {
     const startIndex = this.currentPage * this.perPage;
@@ -43,36 +67,9 @@ export class TechTransferComponent implements OnInit {
     this.pagedResults = this.techTransferData.results.slice(startIndex, endIndex);
   }
 
-  goToNextPage(): void {
-    if (this.currentPage < this.totalPages - 1) {
-      this.currentPage++;
-      this.updatePagedResults();
-      this.scrollToTop();
-    }
-  }
-
-  goToPreviousPage(): void {
-    if (this.currentPage > 0) {
-      this.currentPage--;
-      this.updatePagedResults();
-      this.scrollToTop();
-    }
-  }
-
-
-  goToPage(page: number): void {
-    this.currentPage = page;
-    this.updatePagedResults();
-    this.scrollToTop();
-  }
-
-
   get totalPages(): number {
-    return Math.ceil(this.totalResults / this.perPage);
+    return Math.ceil(this.totalResults / this.perPage); // Math.ceil redondea de forma ascendente
   }
-
-
-
 
   get visiblePages(): number[] {
     const totalPages = this.totalPages;
@@ -99,6 +96,5 @@ export class TechTransferComponent implements OnInit {
   }
 
 }
-
 
 
