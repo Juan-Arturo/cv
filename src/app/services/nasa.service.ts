@@ -80,18 +80,20 @@ export class NasaService {
 
 
   getApod(): Observable<Apod> {
-    return this.http.get(`${this.nasaUrl}planetary/apod?api_key=${this.apiKey}`).pipe(
+    return this.http.get(`${this.nasaUrl}planetary/apod?api_key=${this.apiKey}&date=2024-05-6`).pipe(
       map((response: any) => ({
         copyright: response.copyright,
-        date: new Date(response.date), // Aquí se debe convertir la fecha a un objeto Date
+        date: new Date(response.date),
         explanation: response.explanation,
-        hdurl: response.hdurl,
-        media_type: response.media_type, 
+        url: response.url,
+        media_type: response.media_type,
         service_version: response.service_version,
         title: response.title,
       }))
     );
   }
 
-
 }
+
+
+// https://api.nasa.gov/planetary/apod?api_key=WZtjU4dEOnmbXTgqFwJgNfEycXOGkAGQe2EQmn6H&date=2024-05-5

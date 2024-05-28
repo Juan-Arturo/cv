@@ -1,4 +1,4 @@
-/* Global Styles */
+/* Global Styles */  /*originaal*/
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #f4f4f9;
@@ -22,6 +22,7 @@ body {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
   background: #ffffff;
+  position: relative;
 }
 
 .nasa-news-card:hover {
@@ -79,17 +80,31 @@ mat-card-subtitle {
   padding-top: 10px;
 }
 
-/* Image Styles */
-.nasa-news-image {
-  width: 100%;
-  max-height: 300px; /* Altura máxima de la imagen */
-  height: auto; /* Altura automática para mantener la proporción */
+/* Image and Video Styles */
+.nasa-news-image, .nasa-news-video {
+  padding: 4px;
+  width: calc(100% - 8px); /* Adjust width to account for padding */
+  height: calc(100% - 8px); /* Adjust height to account for padding */
   border-top: 1px solid #dddddd;
   transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
   cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 
-.nasa-news-image:hover {
+.nasa-news-card.active .nasa-news-image, .nasa-news-card.active .nasa-news-video {
   transform: scale(1.05);
   filter: brightness(110%);
+  opacity: 1;
 }
+
+/* New - Image overlay styles */
+.nasa-news-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+}
+

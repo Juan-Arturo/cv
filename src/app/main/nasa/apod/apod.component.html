@@ -1,12 +1,28 @@
-<mat-card *ngIf="apodData" class="nasa-news-card" style="width: 95%">
+<mat-card *ngIf="apodData" class="nasa-news-card" [class.active]="isShowingFullScreenImage" style="width: 95%">
   <mat-card-header class="nasa-news-header">
-    <mat-card-title class="nasa-news-title">NASA News</mat-card-title>
+    <mat-card-title class="nasa-news-title">NASA ESTRELLA DEL DÍA </mat-card-title>
     <mat-card-subtitle>{{ apodData.date | date:'mediumDate' }}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content class="nasa-news-content">
     <h2 class="nasa-news-content-title">{{ apodData.title }}</h2>
     <p>{{ apodData.explanation }}</p>
-    <p class="nasa-news-author"><strong>Autor:</strong> {{ apodData.copyright }}</p>
+    <p class="nasa-news-author"><strong>Autor:</strong> {{ apodData.copyright ? apodData.copyright : 'Sin autor' }}</p>
   </mat-card-content>
-  <img mat-card-image [lazyLoad]="apodData.hdurl" [alt]="apodData.title" class="nasa-news-image" style="width: 100%">
+  <ng-container *ngIf="apodData.media_type === 'image'; else videoTemplate">
+    <img mat-card-image [lazyLoad]="apodData.url" [alt]="apodData.title" class="nasa-news-image">
+  </ng-container>
+  <ng-template #videoTemplate>
+    <iframe #videoIframe class="nasa-news-video" [src]="apodData.url | safeUrlPipe" frameborder="0" allowfullscreen></iframe>
+  </ng-template>
+  <button mat-raised-button (click)="toggleFullVideo(videoIframe)">
+    {{ isShowingFullScreenImage ? 'Ocultar Estrella' : 'Ver Estrella' }}
+  </button>
 </mat-card>
+
+
+<!-- original -->
+
+
+
+<!-- <button mat-raised-button *ngIf="!isShowingFullScreenImage" (click)="showFullImage()">Ver imagen</button>
+    <button mat-raised-button *ngIf="isShowingFullScreenImage" (click)="showFullImage()">Ocultar imagen</button> -->
