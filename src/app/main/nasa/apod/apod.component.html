@@ -1,10 +1,12 @@
-<mat-card *ngIf="apodData">
-  <img mat-card-image [lazyLoad]="apodData.hdurl" [alt]="apodData.title">
-  <mat-card-content>
-    <h2>{{ apodData.title }}</h2>
+<mat-card *ngIf="apodData" class="nasa-news-card" style="width: 95%">
+  <mat-card-header class="nasa-news-header">
+    <mat-card-title class="nasa-news-title">NASA News</mat-card-title>
+    <mat-card-subtitle>{{ apodData.date | date:'mediumDate' }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content class="nasa-news-content">
+    <h2 class="nasa-news-content-title">{{ apodData.title }}</h2>
     <p>{{ apodData.explanation }}</p>
-    <p>Autor: {{ apodData.copyright }}</p>
-    <p>Fecha: {{ apodData.date | date:'mediumDate' }}</p>
+    <p class="nasa-news-author"><strong>Autor:</strong> {{ apodData.copyright }}</p>
   </mat-card-content>
+  <img mat-card-image [lazyLoad]="apodData.hdurl" [alt]="apodData.title" class="nasa-news-image" style="width: 100%">
 </mat-card>
-
