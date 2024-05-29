@@ -1,24 +1,24 @@
 
 
-
-<app-earth></app-earth>
-
-
-    <!-- card -->
-  <div class="card-container">
-    <mat-card *ngFor="let item of epicData" class="card">
-      <img
-        mat-card-image
-        [defaultImage]="'/assets/placeholder.png'"
-        [lazyLoad]="item.imageUrl"
-        alt="Imagen EPIC">
-      <mat-card-content>
-        <h2>{{ item.identifier }}</h2>
-        <p class="coordinates-title">Coordenadas Centrales</p>
-        <p class="coordinates">{{ convertToDMS(item.centroid_coordinates.lat, true) }}, {{ convertToDMS(item.centroid_coordinates.lon, false) }}</p>
-        <p class="date"><small>Fecha: {{ item.date | date }}</small></p>
-      </mat-card-content>
-    </mat-card>
+ <div class="container ">
+    <div class="earth-container mt-5">
+      <app-earth></app-earth>
+    </div>
+    <div class="card-container">
+      <mat-card *ngFor="let item of epicData" class="card">
+        <img
+          mat-card-image
+          [defaultImage]="'/assets/placeholder.png'"
+          [lazyLoad]="item.imageUrl"
+          alt="Imagen EPIC">
+        <mat-card-content>
+          <h2>{{ item.identifier }}</h2>
+          <p class="coordinates-title">Coordenadas Centrales</p>
+          <p class="coordinates">{{ convertToDMS(item.centroid_coordinates.lat, true) }}, {{ convertToDMS(item.centroid_coordinates.lon, false) }}</p>
+          <p class="date"><small>Fecha: {{ item.date | date }}</small></p>
+        </mat-card-content>
+      </mat-card>
+    </div>
   </div>
 
 

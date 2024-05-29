@@ -126,3 +126,17 @@
   top: 60px;
   animation: twinkling 2s infinite;
 }
+
+
+/* Estilos para hacer que el componente sea responsivo */
+.app-earth {
+  max-width: 100%; /* Hace que el componente sea fluido */
+  height: auto; /* Permite que la altura se ajuste automáticamente */
+}
+
+/* Estilos específicos para tamaños de pantalla pequeños */
+@media (max-width: 768px) {
+  .app-earth {
+    max-width: 50%; /* Reduzca el tamaño del componente en pantallas pequeñas */
+  }
+}

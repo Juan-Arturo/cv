@@ -1,9 +1,26 @@
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #231e1e;
+
+  background-size: cover;
+
+}
+
+.earth-container {
+  margin-bottom: 20px; /* Espacio entre el app-earth y las tarjetas */
+}
+
 .card-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 20px;
-  background-color: #c2bfbf; /* Fondo negro para darle un look espacial */
+ height: 100%;
+ width: 100%;
+
 }
 
 .card {
@@ -23,7 +40,7 @@
 }
 
 mat-card-image {
-  height: 200px;
+  height: 100px;
   background-color: #000; /* Fondo negro para imágenes */
 }
 
@@ -66,5 +83,3 @@ h2 {
 .date small {
   color: #ccc; /* Color más claro para el texto pequeño */
 }
-
-

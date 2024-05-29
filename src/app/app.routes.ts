@@ -29,7 +29,7 @@ export const routes: Routes = [
 
     {path: "nasa", component: NasaComponent,
      children:[
-      {path: "", component: ApodComponent},
+      {path: "", component: EpicComponent},
       {path: "Epic", component: EpicComponent},
       {path: "TechTransfer", component: TechTransferComponent},
       {path: "APOD", component: ApodComponent}
