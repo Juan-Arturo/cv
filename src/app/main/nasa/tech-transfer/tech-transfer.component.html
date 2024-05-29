@@ -1,6 +1,6 @@
 <div class="container mt-4">
   <div class="row">
-    <div class="col-lg-12 mb-4" *ngFor="let item of pagedResults; let i = index">
+    <div class="col-lg-12 mb-4  ms-1" *ngFor="let item of pagedResults; let i = index">
       <div [ngClass]="{'flex-row': i % 2 === 0, 'flex-row-reverse': i % 2 !== 0}" class="card">
         <img class="card-img-left" [src]="item.imageUrl" alt="{{ item.title | stripHtmlTags }}">
         <div class="card-body">

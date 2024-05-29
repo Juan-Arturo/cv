@@ -9,14 +9,14 @@
    text-align: center;
     font-size: 3em;
     color: #E3350D;
-}  
+}
 .span{
     color: #E3350D;
-}  
+}
   .red-border {
     border-color: #FF4136;
   }
-  
+
 .img-size{
     width: 250px;
     height: 200px;
@@ -81,8 +81,8 @@
     height: 130px;
     opacity: .8;
     z-index: 1;
-   
-    
+
+
 }
 
 .card__info {
@@ -90,7 +90,7 @@
     flex-direction: column;
     color: white;
     text-transform: capitalize;
-   
+
 }
 
 .card__info h2 {
@@ -104,22 +104,22 @@
     border-radius: 40px;
     text-align: center;
     margin-top: 5px;
-    
+
 }
 .card__img {
     display: flex;
     justify-content: center; /* Alinea horizontalmente la imagen */
     align-items: center; /* Alinea verticalmente la imagen */
     padding-left:20%;
-    
-  
+
+
     margin-right: 5%;
     width: 15%; /* Establece el ancho de la imagen en 200 píxeles */
     height: 180px; /* Establece la altura de la imagen en 150 píxeles */
     z-index: 5;
-    
+
     /* background-color: #e4e5e2;  */
-    
+
 }
 
 
@@ -128,9 +128,31 @@
 
 
 
-/* 
+/*
 .card__content {
     display: flex;
     flex-direction: row;
 } */
   /*end diseños pokedex*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /**/
+
+  

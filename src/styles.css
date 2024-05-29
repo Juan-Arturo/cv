@@ -10,7 +10,30 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
+/**/
+/* styles.css o styles.scss */
+/* styles.css */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
 
+* {
+  box-sizing: inherit;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/**/
 
 /*estilos de la pokedex*/
 /* You can add global styles to this file, and also import other style files */
