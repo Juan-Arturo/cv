@@ -21,10 +21,10 @@ export class ContactComponent {
   message: string='';
 
   constructor(private http:HttpClient) {
-    
+
   }
 
- 
+
   enviarCorreo() {
     gapi.load('auth', () => {
       gapi.auth.authorize({
@@ -65,3 +65,5 @@ export class ContactComponent {
     return btoa(email).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
   }
 }
+
+

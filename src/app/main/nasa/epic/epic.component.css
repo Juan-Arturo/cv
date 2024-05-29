@@ -4,9 +4,8 @@
   flex-direction: column;
   align-items: center;
   background-color: #231e1e;
-
   background-size: cover;
-
+  min-height: 100vh; /* Ajuste para que el contenedor ocupe toda la altura de la ventana */
 }
 
 .earth-container {

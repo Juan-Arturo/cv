@@ -1,6 +1,6 @@
 <main id="main">
   <!-- ======= About Section ======= -->
-  <section id="about" class="about ">
+  <section id="about" class="about m-3 ">
     <div class="container">
       <a popover="Este es el contenido del popover">
         <i class="bi bi-envelope-at-fill"></i>
@@ -8,7 +8,7 @@
 
       <div class="section-title">
         <h2 class="mayus">ACERCA DE MÍ</h2>
-        <p>Soy comprometido con mi trabajo, manteniendo mucha responsabilidad en todo lo
+        <p class="textj">Soy comprometido con mi trabajo, manteniendo mucha responsabilidad en todo lo
            que hago. Constantemente busco aprender cosas nuevas, sin importar si tienen
            relación o no, con mi formación profesional. Me considero una persona activa a
             la que le gusta trabajar en equipo, con capacidad de liderazgo,
@@ -19,7 +19,7 @@
         <div class="col-lg-4" data-aos="">
           <img src="assets/img/yo.jpg" class="img-fluid" alt="">
         </div>
-        <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+        <div class="col-lg-8 pt-4 pt-lg-0 content" >
           <h3>INGENIERO EN TECNOLOGÍAS DE LA INFORMACIÓN</h3>
 
           <div class="row">
@@ -56,26 +56,25 @@
       <div class="content m-4">
         <h3>Competencias</h3>
         <div class="row">
-          <div class="col-md-6">
-
-            <div class="card skill-card" *ngFor="let skill of skills.slice(0, skills.length / 2)">
-              <div class="card-body">
-                <i class="{{ skill.icon }}"></i>
-                <span>{{ skill.name }}</span>
-              </div>
+            <div class="col-md-6">
+                <div class="card skill-card azul" *ngFor="let skill of skills.slice(0, skills.length / 2)">
+                    <div class="card-body">
+                        <i class="{{ skill.icon }} size"></i>
+                        <span>{{ skill.name }}</span>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="col-md-6">
-
-            <div class="card skill-card" *ngFor="let skill of skills.slice(skills.length / 2)">
-              <div class="card-body">
-                <i class="{{ skill.icon }}"></i>
-                <span>{{ skill.name }}</span>
-              </div>
+            <div class="col-md-6">
+                <div class="card skill-card verde" *ngFor="let skill of skills.slice(skills.length / 2)">
+                    <div class="card-body">
+                        <i class="{{ skill.icon }} size"></i>
+                        <span>{{ skill.name }}</span>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
+    </div>
+
 
 
     </div>

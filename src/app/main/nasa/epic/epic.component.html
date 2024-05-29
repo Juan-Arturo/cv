@@ -8,7 +8,6 @@
       <mat-card *ngFor="let item of epicData" class="card">
         <img
           mat-card-image
-          [defaultImage]="'/assets/placeholder.png'"
           [lazyLoad]="item.imageUrl"
           alt="Imagen EPIC">
         <mat-card-content>

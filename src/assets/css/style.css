@@ -25,6 +25,10 @@ h6 {
   font-family: "Raleway", sans-serif;
 }
 
+
+.textj{
+  text-align: justify;
+}
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -200,7 +204,7 @@ h6 {
 /* Mobile Navigation */
 .mobile-nav-toggle {
   position: fixed;
-  right: 40px;
+  right: 35px;
   top: 100px;
   z-index: 9998;
   border: 0;
