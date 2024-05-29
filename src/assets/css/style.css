@@ -123,11 +123,11 @@ h6 {
   margin-left: 300px;
 }
 
-/* .container,
+.container,
 .container-fluid {
   padding-left: 30px;
   padding-right: 30px;
-} */
+}
 
 @media (max-width: 1199px) {
   #header {
@@ -138,11 +138,11 @@ h6 {
     margin-left: 0;
   }
 
-  /* .container,
+  .container,
   .container-fluid {
     padding-left: 12px;
     padding-right: 12px;
-  } */
+  }
 }
 
 /*--------------------------------------------------------------
@@ -200,8 +200,8 @@ h6 {
 /* Mobile Navigation */
 .mobile-nav-toggle {
   position: fixed;
-  right: 15px;
-  top: 15px;
+  right: 40px;
+  top: 100px;
   z-index: 9998;
   border: 0;
   font-size: 24px;
