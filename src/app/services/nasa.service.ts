@@ -2,9 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { EpicData } from '../interfaces/nasa/epicData.interface';
-import { response } from 'express';
 import { TechTransfer, TechTransferResult } from '../interfaces/nasa/TechTransfer';
-import { title } from 'process';
 import { Apod } from '../interfaces/nasa/Apod.interface';
 
 @Injectable({
