@@ -80,7 +80,7 @@ export class NasaService {
 
 
   getApod(): Observable<Apod> {
-    return this.http.get(`${this.nasaUrl}planetary/apod?api_key=${this.apiKey}&date=2024-05-6`).pipe(
+    return this.http.get(`${this.nasaUrl}planetary/apod?api_key=${this.apiKey}`).pipe(
       map((response: any) => ({
         copyright: response.copyright,
         date: new Date(response.date),
