@@ -46,7 +46,7 @@ export class TechTransferComponent implements OnInit {
       this.totalResults = response.total;
       this.updatePagedResults();
 
-      
+
     });
   }
 
@@ -92,7 +92,9 @@ export class TechTransferComponent implements OnInit {
 
 
   scrollToTop(): void {
-    window.scroll({ top: 0, behavior: 'smooth' });  // Smooth scrolling
+    document.body.scrollTop = 0; // Para navegadores que soportan esta propiedad
+    document.documentElement.scrollTop = 0; // Para navegadores que soportan esta propiedad
+
   }
 
 }

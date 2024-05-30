@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
 export class AboutComponent {
 
   skills: any[] = [
-    { name: 'Liderazgo', icon: 'bi bi-person-raised-hand' }, // Bootstrap Icons
+    { name: 'Liderazgo',     icon: 'bi bi-person-raised-hand' }, // Bootstrap Icons
     { name: 'Responsabilidad', icon: 'bi bi-person-lines-fill' },
     { name: 'Comunicación', icon: 'bi bi-chat-dots-fill' },
     { name: 'Trabajo en equipo', icon: 'bi bi-people-fill' },
