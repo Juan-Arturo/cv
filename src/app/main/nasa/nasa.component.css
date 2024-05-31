@@ -64,3 +64,26 @@
   transition: background 0.3s, border-color 0.3s, color 0.3s;
 }
 
+
+.galaxy-title {
+  font-size: 1.5rem; /* Tamaño de fuente por defecto */
+}
+
+@media (max-width: 992px) {
+  .galaxy-title {
+    font-size: 1.25rem; /* Tamaño de fuente para pantallas medianas */
+  }
+}
+
+@media (max-width: 768px) {
+  .galaxy-title {
+    font-size: 1rem; /* Tamaño de fuente para pantallas pequeñas */
+  }
+}
+
+@media (max-width: 576px) {
+  .galaxy-title {
+    font-size: 0.875rem; /* Tamaño de fuente para pantallas muy pequeñas */
+  }
+}
+

@@ -204,7 +204,7 @@ h6 {
 /* Mobile Navigation */
 .mobile-nav-toggle {
   position: fixed;
-  right: 35px;
+  right: 20px;
   top: 100px;
   z-index: 9998;
   border: 0;
