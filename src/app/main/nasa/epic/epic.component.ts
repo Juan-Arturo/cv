@@ -7,13 +7,13 @@ import { EpicTransformedData } from '../../../interfaces/nasa/epicTransformedDat
 import { NasaService } from '../../../services/nasa.service';
 import { EpicData } from '../../../interfaces/nasa/epicData.interface';
 import { PaginatorComponent } from '../../../shared/paginator/paginator.component';
-import { EarthComponent } from '../../../shared/earth/earth.component';
+
 
 @Component({
   selector: 'app-epic',
   standalone: true,
   imports: [CommonModule,FormsModule,MaterialModule,
-    LazyLoadImageModule,PaginatorComponent,EarthComponent],
+    LazyLoadImageModule,PaginatorComponent],
   templateUrl: './epic.component.html',
   styleUrl: './epic.component.css'
 })
