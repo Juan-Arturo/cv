@@ -31,6 +31,7 @@
     "@open-wa/whatsapp-button": "^4.1.2",
     "@popperjs/core": "^2.11.8",
     "@types/gapi": "^0.0.47",
+    "angular-cli-ghpages": "^2.0.0",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "express": "^4.18.2",
